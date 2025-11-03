@@ -13,9 +13,9 @@ fi
 for out in out/*; do
 	rm -f $out
 done
-for js in scripts/*; do
-	out="$js"
+for mjs in scripts/*.mjs; do
+	out="$mjs"
 	out="out/${out#scripts/}"
-	out="${out%.js}.md"
-	node $js > "$out"
+	out="${out%.mjs}.md"
+	node $mjs > "$out"
 done

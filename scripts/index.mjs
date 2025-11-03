@@ -1,15 +1,5 @@
-function j(...i) {
-	return i
-		.map(i => Array.isArray(i)
-			? i.join(" / ")
-			: i
-		)
-		.join(", ")
-}
-function q(i) {
-	return `\${${i}}`
-}
-const character = { name: q("character.name") }
+import { j, q } from "../modules/functions.mjs"
+import { character } from "../modules/variables.mjs"
 function main() {
 	const country = q("enter a country...")
 	const profession = q(`What is your profession? i.e.: ${j(
