@@ -10,12 +10,13 @@ if flag local; then
 else
 	:
 fi
-for out in out/*; do
-	rm -f $out
-done
-for mjs in scripts/*.mjs; do
-	out="$mjs"
-	out="out/${out#scripts/}"
-	out="${out%.mjs}.md"
-	node $mjs > "$out"
+rm -rf dist
+tsc
+rm -rf out/*
+for js in dist/*.js; do
+	out="$js"
+	out="out/${out#dist/}"
+	out="${out%.js}.md"
+	chmod +x $js
+	./$js > "$out"
 done
