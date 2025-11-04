@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import { j, q } from "./modules/functions.js"
 import { } from "./modules/variables.js"
-function main() {
+((): void => {
 	const _ = {
-		character: {
-			name: q("What is your name?"),
+		c: {
+			n: q("What is your name?"),
 			country: q("What is your Kingdom?"),
-			profession: q(`What is your profession? i.e.: ${j(
+			job: q(`What is your profession? i.e.: ${j(
 				"Knight",
 				["Witch", "Wizard"],
 				"etc."
@@ -14,7 +14,6 @@ function main() {
 		}
 	}
 	console.log(`
-You are ${_.character.name}, a ${_.character.profession} from the kingdom of ${_.character.country}
+${_.c.n}: "Hi! I'm a ${_.c.job} from the kingdom of ${_.c.country}!"
 `.trim())
-}
-main()
+})()

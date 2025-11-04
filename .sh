@@ -11,12 +11,15 @@ else
 	:
 fi
 rm -rf dist
-tsc
 rm -rf out/*
-for js in dist/*.js; do
-	out="$js"
-	out="out/${out#dist/}"
-	out="${out%.js}.md"
-	chmod +x $js
-	./$js > "$out"
+tsc
+for i in _; do
+	rm -rf dist/$i.js
+done
+for j in dist/*.js; do
+	o="$j"
+	o="out/${o#dist/}"
+	o="${o%.js}.md"
+	node $j > "$o"
+	cat $o
 done
