@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import { j, q } from "./modules/functions.js"
-import { } from "./modules/variables.js"
+import {character.name} from "./modules/variables.js"
 ((): void => {
 	const _ = {
 		c: {
-			n: q("What is your name?"),
+			n: character.name,
 			country: q("What is your Kingdom?"),
 			job: q(`What is your profession? i.e.: ${j(
 				"Knight",
